@@ -18,8 +18,26 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+
+    for side in [a, b, c]:
+        if min(a+b, b+c, c+a) > side > 0:
+            pass
+        else:
+            raise TriangleError
+
+    if len(set([a, b, c])) == 3:
+        return 'scalene'
+
+    elif len(set([a, b, c])) == 2:
+        print set([a, b, c])
+        return 'isosceles'
+
+    elif len(set([a, b, c])) == 1:
+        print (len(set([a, b, c])))
+        return 'equilateral'
+
+    else:
+        raise TriangleError
 
 
 # Error class used in part 2.  No need to change this code.
